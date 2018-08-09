@@ -1,0 +1,28 @@
+app_gen_region_api:
+    resource: "@AppBundle/Controller/GenRegionRESTController.php"
+    type:   rest
+    prefix:   /api
+
+app_user_api:
+    resource: "@AppBundle/Controller/UserRESTController.php"
+    type:   rest
+    prefix:   /api
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+lista_sector:
+    path:     /lista_sector
+    defaults: { _controller: AppBundle:GenRegionREST:listaSector }
+
+lista_producto:
+    path:     /lista_producto
+    defaults: { _controller: AppBundle:Default:listaProductos }
+
+lista_producto_vendidos:
+    path:     /lista_producto_vendidos
+    defaults: { _controller: AppBundle:Default:listaProductosVendidos }

@@ -1,0 +1,78 @@
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Informe de Features y Demases</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li class="active">
+                <strong>Informe de Features y Demases</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+    </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight" >
+<div class="row">
+<div >
+<div class="ibox float-e-margins">
+<div class="ibox-content">
+
+<div class="container-fluid">
+<div class="col-lg-offset-2 col-lg-8 col-md-10 col-md-offset-1 col-sm-12 ">
+<div>
+                <div>
+                    <form  name="userForm" ng-submit="buscarProductosVendidos()" style="padding-bottom:20px;" class="ng-pristine ng-valid" novalidate>
+                    <div class="row">
+                         <div class="col-md-6">
+                              <div class="form-inline">
+                                    <button type="submit" href="javascript:void(0);" 
+                                    class="btn btn-primary pull-right" 
+                                    ng-disabled="userForm.$invalid" 
+                                    style="margin-bottom: 0px;">
+                                    <strong>Desplegar mas buscados</strong>
+                                    </button>                                    
+                                </div>
+                          
+                         </div>
+                     
+                    </div>                                    
+                    </form>
+                </div>
+
+</div>
+</div>
+
+       <div ng-repeat="producto in productosV" class="col-lg-10" ng-hide="productosV == null"> <!-- Step 1 -->
+
+                    <div class="row">
+                            <div class="col-md-6">
+                                    <p> Titulo :<small>{{producto.titulo}}</small></p>
+                                    <p> Descripción :<small>{{producto.descripcion}}</small></p>
+                                    <p> Vendidos:<small>{{producto.vendidos}}</small></p>
+                                    <p> Tags :<small> {{producto.tags.split(',')[0]}}, {{producto.tags.split(',')[1]}}, {{producto.tags.split(',')[2]}}, {{producto.tags.split(',')[3]}}, {{producto.tags.split(',')[4]}}  </small></p>                
+                            </div>
+                            <div class="col-md-6">
+                                <div class="panel panel-default panel panel-default .col-md-6 .offset-md-3">
+                                    <div class="panel-body" style="background-color: #f7f7f7;">
+                                        <div align="center"> <h4> {{producto.titulo}}</h4>
+                                       <img src="{{producto.imagen}}"  class="img-responsive" alt="{{producto.titulo}}"/>                 
+                                        </div>
+                                    </div>
+                                </div>   
+                            </div>
+                    </div>
+                    <hr>
+                    <br>
+        </div> 
+</div>
+
+              
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr>
